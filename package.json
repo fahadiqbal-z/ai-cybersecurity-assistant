@@ -1,0 +1,51 @@
+{
+  "name": "ai-cybersecurity-assistant",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "dev": "npm run db:migrate && next dev -H 0.0.0.0",
+    "build": "next build",
+    "start": "next start -H 0.0.0.0",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "audit:deps": "npm audit --omit=dev",
+    "test:e2e": "playwright test",
+    "db:prune": "tsx scripts/prune.ts",
+    "screenshots": "tsx scripts/capture-screenshots.ts"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "0.5.8",
+    "@next/env": "16.3.6",
+    "lucide-react": "0.468.0",
+    "next": "16.3.6",
+    "nodemailer": "10.0.10",
+    "pg": "8.16.3",
+    "react": "19.1.9",
+    "react-dom": "19.1.9",
+    "zod": "3.25.76",
+    "tsx": "4.20.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@testing-library/jest-dom": "6.6.4",
+    "@testing-library/react": "16.3.0",
+    "@testing-library/user-event": "14.6.1",
+    "@types/node": "20.19.43",
+    "@types/nodemailer": "7.0.5",
+    "@types/pg": "8.15.5",
+    "@types/react": "19.1.14",
+    "@types/react-dom": "19.1.9",
+    "eslint": "9.39.2",
+    "eslint-config-next": "16.3.6",
+    "jsdom": "26.1.0",
+    "typescript": "5.9.3",
+    "vitest": "4.1.11"
+  }
+}
